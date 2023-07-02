@@ -110,8 +110,8 @@ fn rsync_with_ssh(args: &Args) {
     if args.ipv6 {
         rsync_args.push("-6".to_owned());
     }
-    rsync_args.push(args.src.clone());
-    rsync_args.push(args.dest.clone());
+    rsync_args.push(path_win_to_unix(&args.src));
+    rsync_args.push(path_win_to_unix(&args.dest));
 
     Command::new(path_rsync().expect("get rsync path failed"))
         .args(rsync_args)
@@ -158,8 +158,8 @@ fn rsync(args: &Args) {
     if args.ipv6 {
         rsync_args.push("-6".to_owned());
     }
-    rsync_args.push(args.src.clone());
-    rsync_args.push(args.dest.clone());
+    rsync_args.push(path_win_to_unix(&args.src));
+    rsync_args.push(path_win_to_unix(&args.dest));
 
     Command::new(path_rsync().expect("get rsync path failed"))
         .args(rsync_args)
