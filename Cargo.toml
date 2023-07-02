@@ -1,0 +1,8 @@
+[package]
+name = "rsync-win"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.3.1", features = ["derive"] }
+home = "0.5.5"
