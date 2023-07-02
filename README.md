@@ -2,13 +2,21 @@
 
 `rsync` for Windows.
 
-see [releases]() page for binaries.
+see [releases](https://github.com/rn7s2/rsync-win/releases) page for binaries.
 
 I had a bad time trying to find a working `rsync` for Windows. I read some blogs about [cwRsync](https://www.itefix.net/cwrsync), but I just couldn't get it to work.
 
 Finally, I repacked the `rsync.exe`, `ssh.exe` and `cygpath.exe` from Cygwin, and wrote a `Rust` wrapper around it.
 
 It works for me, and I hope it works for you too.
+
+# Installation
+
+0. goto [releases](https://github.com/rn7s2/rsync-win/releases) page & download `rsync-win.zip`
+1. extract rsync-win.zip to a directory `X` (e.g. `C:\`)
+2. add `X\rsync-win` to PATH (e.g. add `C:\rsync-win` to PATH) \
+   make sure `rsync-win.exe` is in `X:\rsync-win` (e.g. `C:\rsync-win\rsync-win.exe`)
+3. restart your terminal and use rsync-win in your powershell/cmd
 
 # Usage
 
