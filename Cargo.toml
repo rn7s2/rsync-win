@@ -1,8 +1,12 @@
 [package]
 name = "rsync-win"
-version = "0.1.0"
-edition = "2021"
+version = "0.1.2"
+description = "Rsync for Windows"
+categories = ["command-line-utilities"]
+authors = ["rn7s2"]
+homepage = "https://github.com/rn7s2/rsync-win"
+edition = "2024"
 
 [dependencies]
-clap = { version = "4.3.1", features = ["derive"] }
-home = "0.5.5"
+clap = { version = "4.5.40", features = ["derive"] }
+home = "0.5.11"

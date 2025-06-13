@@ -2,7 +2,7 @@
 
 `rsync` for Windows.
 
-see [releases](https://github.com/rn7s2/rsync-win/releases) page for binaries.
+See [releases](https://github.com/rn7s2/rsync-win/releases) page for binaries.
 
 I had a bad time trying to find a working `rsync` for Windows. I read some blogs about [cwRsync](https://www.itefix.net/cwrsync), but I just couldn't get it to work.
 
@@ -12,15 +12,14 @@ It works for me, and I hope it works for you too.
 
 # Installation
 
-0. goto [releases](https://github.com/rn7s2/rsync-win/releases) page & download `rsync-win.zip`
-1. extract rsync-win.zip to a directory `X` (e.g. `C:\`)
-2. add `X\rsync-win` to PATH (e.g. add `C:\rsync-win` to PATH) \
-   make sure `rsync-win.exe` is in `X:\rsync-win` (e.g. `C:\rsync-win\rsync-win.exe`)
-3. restart your terminal and use rsync-win in your powershell/cmd
+1. Goto [releases](https://github.com/rn7s2/rsync-win/releases) page & download `rsync-win.zip`.
+2. Extract. Keep `cygwin64` folder along side with `rsync-win.exe`.
+3. Add the directory of `rsync-win.exe` to `PATH`.
+4. Restart your terminal and try executing `rsync-win -h`.
 
 # Usage
 
-- e.g. bandwidth limit `2048 KBytes/s`, `-a`, `-v`, show progress, copy from remote machine to local, exclude `*.log` files, and save to `./target/` directory.
+- bandwidth limit `2048 KBytes/s`, `-a`, `-v`, show progress, copy from remote machine to local, exclude `*.log` files, and save to `./target/` directory.
 
   ```
   rsync-win --bwlimit=2048 -av --exclude='*.log' --progress -s <REMOTE USER>@<REMOTE_MACHINE>:<REMOTE_PATH> -d ./target/
@@ -29,8 +28,13 @@ It works for me, and I hope it works for you too.
 - Help
 
   ```
-  rsync for Windows.
-  Most of the options are the same as the original rsync.
+  Rsync for Windows
+
+  Allowed formats for <SRC>/<DEST>:
+    local: C:/path/to/file
+      ssh: [USER@]HOST:/path/to/file (use --ssh-port to specify the port)
+    rsync: rsync://[USER@]HOST[:PORT]/path/to/file
+
 
   Usage: rsync-win.exe [OPTIONS] --src <SRC> --dest <DEST>
 
@@ -47,12 +51,14 @@ It works for me, and I hope it works for you too.
         --bwlimit <BWLIMIT>
     -4, --ipv4
     -6, --ipv6
+        --ssh-port <SSH_PORT>
     -s, --src <SRC>
     -d, --dest <DEST>
     -h, --help                 Print help
+    -V, --version              Print version
   ```
 
-some blogs:
+Some blogs:
 
 - [如何讓 OpenSSH for Windows 也能支援 Rsync 遠端加密連線傳輸](https://blog.miniasp.com/post/2021/12/15/How-to-use-Rsync-with-OpenSSH-for-Windows)
 
