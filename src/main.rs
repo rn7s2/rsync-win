@@ -175,7 +175,10 @@ fn path_win_to_unix(path: &str) -> String {
         .args(["-u", path])
         .output()
         .expect("failed to execute process");
-    String::from_utf8(out.stdout).expect("convert path failed: not a valid utf8 sequence")
+    String::from_utf8(out.stdout)
+        .expect("convert path failed: not a valid utf8 sequence")
+        .trim()
+        .to_string()
 }
 
 fn path_rsync() -> PathBuf {
