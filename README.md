@@ -47,6 +47,7 @@ It works for me, and I hope it works for you too.
     -r, --recursive
         --delete
         --exclude <EXCLUDE>
+        --partial
         --progress
         --bwlimit <BWLIMIT>
     -4, --ipv4
